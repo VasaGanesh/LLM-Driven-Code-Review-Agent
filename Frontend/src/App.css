@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: "Fira Code", monospace;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+main {
+  display: flex;
+  gap: 1rem;
+  height: 100%;
+  padding: 1rem;
+}
+
+main .left,
+main .right {
+  flex: 1;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* LEFT SIDE (Editor) */
+main .left {
+  background-color: #0c0c0c;
+  position: relative;
+  border: 1px solid #2e2e2e;
+}
+
+.left .code {
+  flex: 1;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: #0c0c0c;
+}
+
+/* Review Button */
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+}
+
+main .left .review:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #8b5cf6, #6366f1);
+}
+
+/* RIGHT SIDE (AI Review Output) */
+main .right {
+  background-color: #202020;
+  padding: 1.5rem;
+  border-radius: 0.7rem;
+  border: 1px solid #2e2e2e;
+  overflow-y: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e5e5e5;
+}
+
+/* Markdown Styling */
+main .right h1,
+main .right h2 {
+  color: #ffffff;
+}
+
+main .right pre {
+  background-color: #0d1117;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  overflow-x: auto;
+}
+
+main .right code {
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+}
+
+main .right p {
+  margin-bottom: 1rem;
+}
